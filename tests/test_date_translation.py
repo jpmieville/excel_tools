@@ -1,7 +1,7 @@
 import datetime
 import unittest
 import xlrd
-from .exceltools import get_date
+from excel_tools.exceltools import get_date
 
 class TestDateTranslation(unittest.TestCase):
     def test1(self):
