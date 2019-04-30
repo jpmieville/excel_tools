@@ -220,7 +220,7 @@ class Row(object):
 
 def clean(value: str) -> str:
     """
-    Remove from the column names some forbiden characters
+    Remove from the column names some forbidden characters
 
     :param value:
     :return: str
@@ -251,7 +251,7 @@ class ExcelReaderError(Exception):
     pass
 
 
-def col_name(position):
+def get_col_name(position):
     """
     Return the column name like EXCEL is using in function of the position
     A, B, C, ..., Z, AA, AB, ..., AZ, BA, ..., BZ, CA, ...
@@ -269,7 +269,7 @@ def col_name(position):
         if quotient < 1:
             return "{}".format(chr(65 + remainder))
         else:
-            return "{0}{1}".format(col_name(quotient - 1), chr(65 + remainder))
+            return "{0}{1}".format(get_col_name(quotient - 1), chr(65 + remainder))
 
 
 def reader(excel_file, sheet_name=None, header=True, starting_row=1, lower=True):
@@ -307,7 +307,7 @@ def reader(excel_file, sheet_name=None, header=True, starting_row=1, lower=True)
     else:
         header = []
         for i in range(sheet.ncols):
-            header.append(col_name(i))
+            header.append(get_col_name(i))
         Row.header = header
         #
     for rx in range(starting_row, sheet.nrows):

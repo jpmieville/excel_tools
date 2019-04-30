@@ -1,4 +1,4 @@
 xlwt
 xlrd
-win32com
-dateutil
+# win32com
+python-dateutil
