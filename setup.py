@@ -15,8 +15,8 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=["xlrd",
                       "xlwt",
-                      "dateutil",
-                      "win32com"
+                      "python-dateutil",
+                      "pywin32"
                       ],
     classifiers=[
         "Programming Language :: Python :: 3",
